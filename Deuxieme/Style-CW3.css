@@ -1,0 +1,93 @@
+h2
+{
+  color: RGB(100,200,150);
+}
+h1, p
+{
+  text-align: center;
+}
+/*image*/
+a
+{
+  float:center;
+}
+
+
+{
+  background-image:radial-gradient();
+}
+
+@font-face
+{
+  font-weight: 400;
+  font-face: 200;
+  font-size: normal;
+  font-family:;
+}
+
+{
+  border-width: thin;
+  border: ;
+  border-color:;
+  border-color: inherit;
+  border-style: outset;
+  border-radius:;
+}
+
+{
+  text-shadow: 0,5;
+}
+
+/*
+font_size:(xx-small, x-small, small, medium, large, x-large, xx-large)
+font_family:(Arial,Impact,"Arial Black","Comic Sans MS","Courier New", "Times New Roman", Verdana,)
+font_style:italique,oblique, normal   (<em>)
+font_weight:bold, normal              (<strong>)
+text_decoration:underline, line-throught, overline, blink,none
+text_align: left, center, right, justify
+float:left,right;   #   clear_both;
+
+color:white:black;green;pink;red;yellow;blue;silver;maroon;lime;olive;navy;fuchsia;purple;teal;gray
+background_color:
+background_image:("link")
+background_position= ??px ??px,top,bottom,lef center,right
+background_attachment=fixed or scroll
+background_repeat=no_repeat,repeat,repeat-x or y
+opacity: 0 à 1
+rgba=():
+rgb=():
+body{} = class font d'ecran
+
+:hover
+a:hover
+:active
+:focus
+:visited
+
+display: block,table-cell;
+margin-left:auto, ??px
+margin-right:auto,  ??px
+vertical-align:middle
+min-height;??px
+width: ??px
+
+
+
+border[-left/right/top/]: ??px color type(none, solid, dotted, dashed, double, groove, ridge,inset, outset)-------------------------bcp avoir
+border-radius:??px / ??px:
+box-shadow: ??px ??px ??px color [inset/outset]
+text-shadow:""
+
+@font-face {
+
+    font-family: 'MaSuperPolice';
+
+    src: url('MaSuperPolice.eot') format('eot'),
+
+         url('MaSuperPolice.woff') format('woff'),
+
+         url('MaSuperPolice.ttf') format('truetype'),
+
+         url('MaSuperPolice.svg') format('svg');
+
+}-->

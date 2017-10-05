@@ -63,6 +63,23 @@ footer
   width:auto;
 }
 
+script{
+
+  flex:3000;
+}
+
+
+p{
+  flex:0;
+}
+
+Button
+{
+  height: 2000;
+  width: 1000;
+  flex: 10;
+}
+
 .LogoGoogle{
             display: flex;
             flex-wrap:wrap;

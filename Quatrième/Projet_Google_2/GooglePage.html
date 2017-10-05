@@ -6,7 +6,8 @@
     <title>LE SUPER CV</title>
   </head>
   <body >
-    <header>
+
+    <header id="DebutPage">
       <p class="bloc1"><img  src="DocGoogle/BountonConnect.png" alt="Connect Google" target="_blank"/></p>
       <p class="bloc1"><img class="google" src="DocGoogle/LogoApps.png" alt="Applis Google" target="_blank"/></p>
       <div class="bloc1">Images</div>
@@ -15,26 +16,35 @@
     </header>
 
 
-    <section id="CorpsText">
+    <section id="CorpsText" style="display:none">
       <p Class="LogoGoogle">
         <img src="DocGoogle/LogoGoogle.png" alt="Logo Google" target="_blank"/>
       </p>
 
       <div Class="rechercheBar"> </div>
 
-      <p Class="LogoGoogle">
-          <div Class="rechercheB"> Recherche Google </div>
-          <div Class="rechercheB"> J'ai de la chance </div>
-        </div>
-      </p>
+      <div Class="recherButtons">
+          <div I=id="Boute">
 
-      <p>
-        <div Class="PhraseDom"> Le Domaine Google.fr est disponible en :English  </div>
-      </p>
+          <a  class="rechercheB" href="'https://www.google.fr/#q='" class="BCstyle"> Recherche Google </a></div>
+          <div Class="rechercheB" class="BCstyle"> J'ai de la chance </div>
+      </div>
+
+
+      <div Class="PhraseDom"> Le Domaine Google.fr est disponible en :English  </div>
+
 
     </section>
 
-    <footer>
+
+    <section id="CorpsButt" style="display: block">
+      <button id="Bouton2Masque" class="BCstyle">
+        Veuillez pour activer la recherche
+      </button>
+    </section>
+
+
+    <footer id="FinPage">
           <div class="bloc">Publicité</div>
           <div class="bloc">Entreprise</div>
           <div class="bloc">À propos</div>
@@ -43,12 +53,11 @@
           <div class="bloc">Conditions</div>
           <div class="bloc">Paramètres</div>
     </footer>
-
-    <button>Change user</button>
-    <script src="scripts/mainGoogle.js"></script>
+    <script type="text/javascript" src="scripts/mainGoogle.js"></script>
       <!--balise<></>dispo-->
   </body>
 </html><!--
 /*
-<script type="text/javascript" src="scripts/Scripts-Google.js"></script>
+
+
 <button type="button" onclick="document.getElementById('demo').style.display='none'">Click Me!</button>

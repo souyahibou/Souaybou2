@@ -5,6 +5,8 @@ Body
   flex-wrap:wrap;
   flex-direction: column;
 
+  justify-content:space-between;
+  align-items: stretch;
 }
 
 
@@ -15,9 +17,8 @@ header
   flex-direction: row-reverse;
   align-items:center;
 
-  justify-content:space-around;
+  justify-content:space-around;                       //espace axe principal
   align-items:center;
-  align-content:center;
   margin:auto;;
 
   height: 100px;
@@ -36,7 +37,6 @@ section
 
   justify-content:center;
   align-items:center;
-  align-content:center;
   margin: auto;
 
 
@@ -45,40 +45,17 @@ section
 
 }
 
-footer
-{
-  display: flex;
-  flex-wrap:wrap;
-  flex-direction:row;
-  justify-content:space-around;
-  align-items:center;
-  align-content:center;
+footer{
+        display: flex;
+        flex-wrap:wrap;
+        justify-content:space-around;
+        align-items:center;                           // alignement sur axe 2ndR
 
-
-
-
-  max-height: 2000;
-  max-width: 1000;
-  height:auto:
-  width:auto;
 }
 
-script{
-
-  flex:3000;
-}
-
-
-p{
-  flex:0;
-}
-
-Button
-{
-  height: 2000;
-  width: 1000;
-  flex: 10;
-}
+script{}
+p{}
+Button{}
 
 .LogoGoogle{
             display: flex;
@@ -94,6 +71,43 @@ Button
             margin-right: auto;
 }
 
+
+
+.bloc:nth-child(1){flex:2;}
+.bloc:nth-child(2){flex:2;}
+.bloc:nth-child(3){flex:2;}
+.bloc:nth-child(4){flex:4;}
+.bloc:nth-child(5){flex:2.5;}
+.bloc:nth-child(6){flex:2;}
+.bloc:nth-child(7){flex:2;}
+
+
+.bloc1:nth-child(1){flex:1;}
+.bloc1:nth-child(2){flex:1;}
+.bloc1:nth-child(3){flex:1.8;}
+.bloc1:nth-child(4){flex:1.5;}
+.bloc1:nth-child(5){flex:15;}
+
+
+.rechercheB:nth-child(1){border: 2px black solid;}
+.rechercheB:nth-child(2){border: 2px black solid;}
+
+.rechercheBar{
+              box-shadow: 0px 2px 4px 2px rgb(200,200,200);
+              text-align:center;
+              height: 25px;   width: 1000px;
+}
+
+.rechercheBar:hover{border:none;    outline:none;}
+
+.recherButtons{
+              display: flex;
+              justify-content:center;
+}
+
+
+
+
 .buttGoogle{
             display: flex;
             flex-wrap:wrap;
@@ -106,72 +120,58 @@ Button
 
 
 .PhraseDom{
-
-
-
-}
-
-
-
-
-
-
-.bloc:nth-child(1){flex:2;}
-.bloc:nth-child(2){flex:2;}
-.bloc:nth-child(3){flex:2;}
-.bloc:nth-child(4){flex:4;}
-.bloc:nth-child(5){flex:2.5;}
-.bloc:nth-child(6){flex:2;}
-.bloc:nth-child(7){flex:2;}
-{
-
-}
-
-.bloc1:nth-child(1){flex:1;}
-.bloc1:nth-child(2){flex:1;}
-.bloc1:nth-child(3){flex:1.8;}
-.bloc1:nth-child(4){flex:1.5;}
-.bloc1:nth-child(5){flex:15;}
-
-.rechercheBar
-{
-    box-shadow: 0px 2px 4px 2px rgb(200,200,200);
-    display: flex;
-    flex-wrap:wrap;
-    flex-direction: row;
-    align-content:center;
-}
-
-
-.rechercheBar:hover
-        {
-          box-shadow: 0px 2px 4px 2px rgb(200,200,200);
-          border:none;
-          outline:none;
-        }
-
-.rechercheB:nth-child(1){border: 2px black solid;}
-.rechercheB:nth-child(2){border: 2px black solid;}
-
-
-.PhraseDom{
-            padding-right: 1em;
-            padding-left: 1em;
-            padding-top: 0.5em;
+            padding-right:  1em;
+            padding-left:   1em;
+            padding-top:    0.5em;
             padding-bottom: 0.5em;
+            text-align:center;
 }
-.rechercheBar
+
+
+.Bouton2Masque
 {
-
-  height: 25;
-  width: 500;
-  border: 2px black solid;
-
-  display: flex;
-  flex-wrap:wrap;
-  flex-direction: row;
-  justify-content:space-around;
-  align-items:center;
-  align-content:center;
-
+            list-style-type: none;
+            text-decoration: none;
+            text-align:center;
+            padding-right:  2em;
+            padding-left:   2em;
+            padding-top:    1em;
+            padding-bottom: 1em;
+            color:            rgb(150,200,230);
+            background-color: rgb(247,247,247);
 }
+
+/*
+        align-content:center;                         //espacement des bloquea
+        flex-wrap:wrap;          // retour eventuel à la ligne
+Propriétés bouton
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align:center;
+        background-color: #FFF;
+        background-color: rgb(247,247,247);
+        padding-right:  2em;
+        padding-left:   2em;
+        padding-top:    1em;
+        padding-bottom: 1em;
+        color:rgb(150,200,230);
+        text-decoration: none;
+
+        {
+      	list-style-type: none;
+      	margin: 0;
+      	padding: 0;
+      	position:fixed; top:2%; right:3%; width: 100%;
+      	background-color: #FFF;
+      	justify-content: right;
+      }
+
+      li
+      {
+      	display:inline-block;
+      	margin:0.8em;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+        border:none;
+        outline:none;

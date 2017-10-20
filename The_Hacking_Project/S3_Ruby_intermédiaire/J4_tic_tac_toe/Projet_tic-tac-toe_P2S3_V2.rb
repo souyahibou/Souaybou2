@@ -5,8 +5,7 @@ class BoardCase
       attr_accessor :how_is_status, :vertical, :horizontal
 
       def initialize(vertical_position, horizontal_position)
-          @vertical      = vertical_position
-          @horizontal    = horizontal_position
+
           @how_is_status = " "
       end
 end
@@ -29,7 +28,6 @@ class Board
           @array_of_game[2][0] = BoardCase.new(2,0)
           @array_of_game[2][1] = BoardCase.new(2,1)
           @array_of_game[2][2] = BoardCase.new(2,2)
-
       end
 
 
@@ -47,25 +45,26 @@ class Board
           @array_of_game[horizontal][vertical].how_is_status = joueur_tag
       end
 
-      def is_end(gagnant = "")
+      def is_end(the_player)
           res = 1
           signes = ["X", "O"]
+          the_player.player_status = "win"
           signes.each do |sign|
-                gagnant = sign
-                array_of_game[0].each { |b_case| if b_case.how_is_status == sign then res *= 1 else res *=0 end}; if res==1 then return true end; res==1
-                array_of_game[1].each { |b_case| if b_case.how_is_status == sign then res *= 1 else res *=0 end}; if res==1 then return true end; res==1
-                array_of_game[2].each { |b_case| if b_case.how_is_status == sign then res *= 1 else res *=0 end}; if res==1 then return true end; res==1
+                # the_player.player_status = "win" if the_player.player_tag == sign
+                array_of_game[0].each { |b_case| if b_case.how_is_status == sign then res *= 1 else res *=0 end}; if res==1 then return true end; res=1 ;
+                array_of_game[1].each { |b_case| if b_case.how_is_status == sign then res *= 1 else res *=0 end}; if res==1 then return true else res=1 end;
+                array_of_game[2].each { |b_case| if b_case.how_is_status == sign then res *= 1 else res *=0 end}; if res==1 then return true else res=1 end;
                 #
-                array_of_game.transpose[0].each { |b_case| if b_case == sign then res *= 1 else res *=0 end}; if res==1 then return true end; res==1
-                array_of_game.transpose[1].each { |b_case| if b_case == sign then res *= 1 else res *=0 end}; if res==1 then return true end; res==1
-                array_of_game.transpose[2].each { |b_case| if b_case == sign then res *= 1 else res *=0 end}; if res==1 then return true end; res==1
+                array_of_game.transpose[0].each { |b_case| if b_case.how_is_status == sign then res *= 1 else res *=0 end}; if res==1 then return true end; res=1
+                array_of_game.transpose[1].each { |b_case| if b_case.how_is_status == sign then res *= 1 else res *=0 end}; if res==1 then return true end; res=1
+                array_of_game.transpose[2].each { |b_case| if b_case.how_is_status == sign then res *= 1 else res *=0 end}; if res==1 then return true end; res=1
                 #
                 return true if (array_of_game[0][0].how_is_status + array_of_game[1][1].how_is_status + array_of_game[2][2].how_is_status) == sign+sign+sign
                 return true if (array_of_game[0][2].how_is_status + array_of_game[1][1].how_is_status + array_of_game[2][0].how_is_status) == sign+sign+sign
           end
-          gagnant = ""
-
-        binding.pry
+        # binding.pry
+        the_player.player_status = "In game"
+        return false
       end
 end
 
@@ -120,19 +119,21 @@ class Game
           if gamer_tour == nil then if tour % 2 == 0 then gamer_tour = gamer_one else gamer_tour = gamer_two end elsif gamer_tour == gamer_two then chg = gamer_two;  @gamer_two = gamer_one; @gamer_one =chg;   end
           @tour += 1
           tab_morpion.display_of_array_advanced
+          gamer_tour.player_info
+
           puts "quel case vous jouer\nligne :"                        #personnaliser avec nom des joueur
           pos_v = gets.strip.to_i
           puts "coll :"                        #personnaliser avec nom des joueur
           pos_h = gets.strip.to_i
 
-
-          gamer_tour.player_info
           tab_morpion.action(pos_v, pos_h, gamer_tour.player_tag.to_s)
-          if tab_morpion.is_end(sign_win) then fin(sign_win) else self.turn end
+          if tab_morpion.is_end(gamer_tour) then fin else self.turn end
       end
 
-      def fin(sign_win)
-          puts sign_win
+      def fin
+          puts gamer_one.player_status
+          puts gamer_two.player_status
+
           puts "messages de fin"                        #personnaliser avec nom des joueur
           tab_morpion.display_of_array_advanced
       end

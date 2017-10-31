@@ -9,15 +9,17 @@ require 'pry'
 
 def incubateurs
     page = Nokogiri::HTML(open("http://blog.neocamino.com/liste-des-incubateurs-a-paris/"))
-    list_incu= page.css('h2+p')#.css('img[title="Liste des incubateurs à Paris"]')
+    list_incu= page.css('h2')#.css('img[title="Liste des incubateurs à Paris"]')
     puts list_incu.count
 
-    list_incu2 = list_incu.css('* img')
+    list_incu2 = list_incu.css('h2+p a')#[title="Liste des incubateurs à Paris]')
+    name_Incub  = 
+    puts
     puts list_incu2.count
 i=0
     list_incu2.each do |incubateur|
-      puts incubateur['src'] #alt title
-      puts list_incu2[i]
+      puts "href " + incubateur['href'].to_s #alt title
+      # puts list_incu2[i]
       i+=1
 # puts name_incu
 # puts code_incu

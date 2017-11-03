@@ -1,0 +1,40 @@
+<h1>Users#edit</h1>
+<p>Find me in app/views/users/edit.html.erb</p>
+
+
+<h1>Edit gossip</h1>
+
+
+<%= form_with model: @gossip, local: true do |form| %>
+
+  <% if @gossip.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@gossip.errors.count, "error") %> prohibited
+        this gossip from being saved:
+      </h2>
+      <ul>
+        <% @gossip.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <h1>2e version for update</h1>
+
+
+   <%= form_tag(@gossip, :method=>:put) do %>
+    <%= label_tag('anonymous_author', 'Anonymous_Author : ') %>
+    <%= text_field_tag('anonymous_author') %>
+    <%= label_tag('content','Content :') %>
+    <%= text_area_tag('content') %>
+    <%= submit_tag("Actualiser") %>
+   <% end %>
+
+ <% end %>
+
+
+<%= link_to 'Back', gossips_path %>

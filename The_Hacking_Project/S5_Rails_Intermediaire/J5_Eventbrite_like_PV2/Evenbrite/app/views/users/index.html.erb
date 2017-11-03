@@ -1,0 +1,28 @@
+<h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+
+
+<h1>Index listes des gossips</h1>
+
+
+<%= link_to 'New gossip', new_gossip_path %>
+
+<table>
+  <tr>
+    <th>Anonyme_authors</th>
+    <th>contents</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @gossips.each do |gossip| %>
+    <tr>
+      <td><%= gossip.anonymous_author %></td>
+      <td><%= gossip.content %></td>
+      <td><%= link_to 'Show goss', gossip_path(gossip) %></td>
+      <td><%= link_to 'Edit ssip', edit_gossip_path(gossip) %></td>
+      <td><%= link_to 'Destroy g..p', gossip_path(gossip),
+				      method: :delete,
+				      data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

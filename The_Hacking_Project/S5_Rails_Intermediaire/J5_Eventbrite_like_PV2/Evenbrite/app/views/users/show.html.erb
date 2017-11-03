@@ -1,0 +1,17 @@
+<h1>Users#show</h1>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>En tant que:</strong>
+  <%= @user.creator_id %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_gossip_path(@gossip) %> |
+<%= link_to 'Back', gossips_path %>

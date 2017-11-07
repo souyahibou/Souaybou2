@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
-  get '/contact', to: 'static_pages#contact'
+  get '/contact', to: 'static_pages#contact'	#,	as: 'contact'	
 
-  get '/about', to: 'static_pages#about'
+  get '/about/(:var)', to: 'static_pages#about', as: 'apropos'
 
   root 'static_pages#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
+
+
+
+
+
+
+
+

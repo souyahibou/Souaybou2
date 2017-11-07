@@ -1,0 +1,51 @@
+<h1>Add new flight-command</h1>
+<% if params[:flight] %>
+
+      <%= form_tag(index_path, method: :get) do %>
+          <p><label for = "departure_airport">departure_airport</label>:
+          <%= select_tag("flight[departure_airport]", options_for_select(@user_options)) %>
+
+          <p><label for = "arrival_airport">arrival_airport</label>:
+          <%= select_tag("flight[arrival_airport]", options_for_select(@user_options)) %>
+
+          <p><label for = "date_f">date</label>:
+          <%= select_tag("flight[date_f]", options_for_select(Date.today.upto(Date.today+7))) %>
+
+          <p><label for = "Number of passengers">Number of passenger</label>:
+          <%= text_field_tag "flight[nbr]" %></p>
+
+
+          <p><label for = "flight_description">for fun your story life</label>:
+          <%= text_area 'books', 'description' %></p>
+
+          <%-#= select_date Date.today, prefix: :start_date -%>
+          <br/>
+
+          <%= submit_tag 'Search', name: nil %>
+
+      <% end %>
+
+      <p> Nbr vols :</p>
+      <%= @flights.count %>
+
+      <table>
+        <tr>
+          <th>id</th>
+          <th>date</th>
+          <th>depart</th>
+          <th>arrive</th>
+        </tr>
+
+        <% @flights.each do |vol| %>
+          <tr>
+            <td><input type="radio" id=vol.id name="gender" value="notSpecified" unchecked></td>
+            <td><%= vol.id %></td>
+            <td><%= vol.departure_date %></td>
+            <td><%= vol.departure_airport.airport_code %></td>
+            <td><%= vol.arrival_airport.airport_code %></td>
+          </tr>
+        <% end %>
+
+      </table>
+      <%= submit_tag 'Submit' %>
+<% end %>

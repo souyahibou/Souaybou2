@@ -6,5 +6,6 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+	@nom_page=params[:var]
   end
 end

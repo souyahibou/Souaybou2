@@ -1,0 +1,73 @@
+<h1>Users#new</h1>
+
+
+<form action="/users" accept-charset="UTF-8" method="post">
+
+<% if false %>
+<h4>version 1</h4>
+  <%-# to éviter contre les cross site scripting attacks; pour permettre l'action post on add cet ligne -%>
+   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+   Username: <input type="text" name="name_user"><br>
+   Email: <input type="text" name="the_email"><br>
+   Bio: <input type="text" name="the_bio"><br>
+   <input type="submit" value="Submit">
+<% end %>
+
+
+<% if false %>
+<h4>version 2</h4>
+  <%-# to éviter contre les cross site scripting attacks; pour permettre l'action post on add cet ligne -%>
+   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+   Username: <input type="text" name="user[name_user]"><br>
+   Email: <input type="text" name="user[the_email]"><br>
+   Bio: <input type="text" name="user[the_bio]"><br>
+   <input type="submit" value="Submit2">
+<% end %>
+
+</form>
+
+
+<% if false %>
+  <h4>version 3</h4>no
+  <%= form_tag("/users", method: "post") do %>
+
+    <%= label_tag(:Usermane, "Usermane") %>
+    <%= text_field_tag(:'user[name_user]') %>
+
+    <%= label_tag(:the_email, "Email") %>
+    <%= text_field_tag(:'user[the_email]') %>
+
+    <%= label_tag(:the_bio, "Bio") %>
+    <%= text_field_tag(:'user[the_bio]') %>
+
+    <%= submit_tag("Submit3") %>
+
+  <% end %>
+<% end %>
+
+<% if false %>
+  <h4>version 4</h4>
+  <%= form_for @user do |f| %>
+    First name: <%= f.text_field :username %><br />
+    Last name : <%= f.text_field :email %><br />
+    Biography : <%= f.text_area :bio %><br />
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
+
+
+<h4>version 5 </h4>
+<%= form_for @user do |f| %>
+  <%= f.label :username %>:
+  <%= f.text_field :username, placeholder: "ton nom" %><br />
+
+
+  <%= f.label :email %>:
+  <%= f.text_field :email, placeholder: "ton mail" %><br />
+
+  <%= f.label :Biography %>:
+  <%= f.text_area :bio, placeholder: "your history(story)" %><br />
+
+  <%= f.submit %>
+<% end %>

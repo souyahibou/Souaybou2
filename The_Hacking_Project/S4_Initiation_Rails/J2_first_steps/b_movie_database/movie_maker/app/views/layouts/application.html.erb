@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MovieMaker</title>
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/yegor256/tacit/gh-pages/tacit.min.css"/>
+    <%-# link rel="stylesheet" type="text/css" href="http://yegor256.github.io/tacit/tacit.min.css"/-%>
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+
+    <% if false %>
+        <section>
+	  <p>section for test scss tacit</p>
+          <p>Are you interested in learning more?</p>	
+          <form>
+            <label>Email:</label>
+            <input name="email"/>
+            <button type="submit">Subscribe</button>
+          </form>
+        </section>
+    <% end %>
+
+  </body>
+</html>

@@ -2,13 +2,21 @@
 <html>
   <head>
     <title>JeMePresente</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/yegor256/tacit/gh-pages/tacit-1.1.1.min.css"/>
+<% if true %>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<% end %>
   </head>
 
   <body>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
+
+
+
+
+

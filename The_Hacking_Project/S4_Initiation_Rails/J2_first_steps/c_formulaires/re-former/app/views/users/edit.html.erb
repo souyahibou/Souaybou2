@@ -1,0 +1,18 @@
+<h1>Users#edit</h1>
+<p>Find me in app/views/users/edit.html.erb</p>
+
+
+<h4>version 5 </h4>
+<%= form_for @user do |f| %>
+  <%= f.label :username %>:
+  <%= f.text_field :username, placeholder: "ton nom" %><br />
+
+
+  <%= f.label :email %>:
+  <%= f.text_field :email, placeholder: "ton mail" %><br />
+
+  <%= f.label :Biography %>:
+  <%= f.text_area :bio, placeholder: "your history(story)" %><br />
+
+  <%= f.submit %>
+<% end %>

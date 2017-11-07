@@ -1,0 +1,20 @@
+<h1>Bienvenue sur l'application qui gère le listing des meilleurs films !</h1>
+
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Release Year</th>
+  </tr>
+ 
+  <% @the_films.each do |film| %>
+    <tr>
+      <td><%= film.title %></td>
+      <td><%= film.release_year %></td>
+      <td><%= link_to 'Show', movie_sp_path(film) %></td>
+    </tr>
+  <% end %>
+
+
+</table>

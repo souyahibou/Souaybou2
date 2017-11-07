@@ -1,2 +1,11 @@
 <h1>StaticPages#about</h1>
 <p>Find me in app/views/static_pages/about.html.erb</p>
+
+<% if @nom_page %>
+   <p>Nous sommes dans la page de <%= @nom_page %></p>
+<% end %>
+
+<%= link_to 'ma super page', apropos_path(var: "moi") %>
+<%= link_to 'ta super page', apropos_path(var: "toi") %> 
+<%= link_to 'default page', apropos_path %>
+

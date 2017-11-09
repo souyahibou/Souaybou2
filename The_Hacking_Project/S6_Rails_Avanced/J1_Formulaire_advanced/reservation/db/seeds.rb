@@ -28,4 +28,8 @@ Airport.create airport_code:"BCN", airport_name:"Aéroport de Barcelone-El Prat"
     Flight.create duration:((10..1000).to_a).sample,  departure_airport_id: da,  arrival_airport_id: aa,  departure_date:Faker::Date.between(Date.today,7.days.from_now), departure_airport: Airport.find(da), arrival_airport: Airport.find(aa)
 end
 
+
+Booking.create flight_id:((1..100).to_a).sample
+
+
 print "Success there are #{Airport.all.count} airports and #{Flight.all.count} flights created"

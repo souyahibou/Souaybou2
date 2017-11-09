@@ -1,5 +1,5 @@
 <h1>Add new flight-command</h1>
-<% if params[:flight] %>
+
 
       <%= form_tag(index_path, method: :get) do %>
           <p><label for = "departure_airport">departure_airport</label>:
@@ -16,7 +16,7 @@
 
 
           <p><label for = "flight_description">for fun your story life</label>:
-          <%= text_area 'books', 'description' %></p>
+          <%= text_area 'books', 'description', placeholder: "useless field"%></p>
 
           <%-#= select_date Date.today, prefix: :start_date -%>
           <br/>
@@ -25,6 +25,8 @@
 
       <% end %>
 
+<% if defined?(params[:flight]) && @flights%>
+      <p>Le formukaire vient d'être soumis c'est de la 💣</p>
       <p> Nbr vols :</p>
       <%= @flights.count %>
 
@@ -47,5 +49,9 @@
         <% end %>
 
       </table>
+      <%= form_tag(new_flight_path, method: :get) do %>
       <%= submit_tag 'Submit' %>
+      <% end %>
+<% else %>
+      <p>Je n'ai toujours pas appuyé sur le submit button 🚨</p>
 <% end %>

@@ -1,0 +1,18 @@
+
+
+<% content_for :top_content do %>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to the Gossipperout App!</h1>
+
+      <% unless moussaillon_signed_in? %>
+
+            <p>il faut se login ou s'enregistrer(sign in, sign up, log in, log up, etc) vous n'êtes pas connecté</p>
+              <%= link_to 'Register', new_moussaillon_registration_path  , class: 'btn btn-primary btn-lg' %>
+              <%= link_to 'Log In', new_moussaillon_session_path , class: 'btn btn-primary btn-lg' %>
+      <% end %>
+
+
+    </div>
+  </div>
+<% end %>

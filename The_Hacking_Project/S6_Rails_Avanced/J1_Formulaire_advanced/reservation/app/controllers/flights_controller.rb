@@ -3,21 +3,22 @@ class FlightsController < ApplicationController
   def index
     @user_options = Airport.all.map{ |u| [ u.airport_code, u.id ] }
     @airports = Airport.all
-    if params[:flight]
-        @flights = Flight.search flight_params[:date_f],  flight_params[:departure_airport], flight_params[:arrival_airport]
-    else
-        @flights = Flight.all
-    end
+    if params[:flight] then @flights = Flight.search flight_params end
+
   end
 
 
 
   def new
+    @user_options = Airport.all.map{ |u| [ u.airport_code, u.id ] }
+    @airports = Airport.all
+    @flights = Flight.search params2
 
   end
 
   def create
-      @booking= booking.new(flight_params[:fight_choosen])
+
+      @booking= Booking.new(params3)
       #construire le nombre de passengers indiquées
 	  if @booking.save
 	     redirect_to @booking
@@ -27,12 +28,18 @@ class FlightsController < ApplicationController
   end
 
 
-
 private
   def flight_params
-    params.require(:flight).permit(:departure_airport, :arrival_airport, :date_f, :nbr, :fight_choosen)
+    params.require(:flight).permit(:departure_airport, :arrival_airport, :date_f, :nbr)
   end
 
+  def params2
+    params.permit(:departure_airport, :arrival_airport, :date_f, :nbr)
+  end
+
+  def params3
+    params.permit(:departure_airport, :arrival_airport, :date_f, :nbr)
+  end
 end
 
 

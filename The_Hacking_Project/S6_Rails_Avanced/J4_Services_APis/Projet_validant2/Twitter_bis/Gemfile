@@ -1,12 +1,19 @@
 source 'https://rubygems.org'
 
+gem 'geokit'
+gem 'htmlentities'
+gem 'launchy'
+gem 'oauth'
+gem 'retryable'
+gem 'thor'
+gem 'twitter'
 gem 'rails',        '5.1.2'
 gem 'delayed_job_active_record'   	#ajout
 gem 'jquery-turbolinks'            	#ajout
 gem 'devise-i18n'                 	#ajout
-gem 'rspec-rails', '~> 3.5.0'		#ajout
-gem 'devise' 				#ajout
-gem 'bootstrap-sass', '3.3.7'		#ajout
+gem 'rspec-rails', '~> 3.5.0'		   #ajout
+gem 'devise' 				               #ajout
+gem 'bootstrap-sass', '3.3.7'		   #ajout
 gem 'rails-controller-testing'		#ajout
 gem 'bcrypt',         '3.1.11'		#ajout
 gem 'puma',         '3.9.1'
@@ -28,12 +35,12 @@ group :development do
   gem 'listen',                '3.0.8'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+  'bundler' '~> 1.0'
 end
 
 group :production do
   gem 'pg', '0.20.0'
 end
-
 
 
 

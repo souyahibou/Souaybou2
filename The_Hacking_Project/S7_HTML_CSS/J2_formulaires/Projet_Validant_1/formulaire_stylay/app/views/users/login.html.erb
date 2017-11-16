@@ -1,0 +1,58 @@
+<% if false %>
+
+<h1>in fact add a new User to the list</h1>
+
+<% end %>
+
+
+
+
+
+
+
+    <header id = "titre">  <h1>intuit</h1>  </header>
+
+    <div>
+
+      <header id = "slogan">  <h2>One Account.</br> Everithing Intuit.</h2>  </header>
+
+      <form action="/users"  accept-charset="UTF-8" method="post">
+        <input name="utf8" value="✓" type="hidden">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+        <fieldset>
+            <label for="email">Email address</label>
+            <input type="text" id="email" name="user[email]" placeholder="Your email..">
+            <span></span>
+        </fieldset>
+
+
+        <fieldset>
+            <label for="phone">Phone (recommended)</label>
+            <input type="text" id="phone" name="user[phone]" placeholder="Your phone number..">
+            <span id="sms-warning">Standard call, messaging or data rates may apply.</span>
+        </fieldset>
+
+
+        <fieldset>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="user[password]" placeholder="Your secret password..">
+            <span></span>
+        </fieldset>
+
+
+        <fieldset>
+            <input type="submit" id="submit" value="Create Account"  name="commit">
+        </fieldset>
+      </form>
+
+
+      <footer id="validation">  By clicking Create Account, you agree to our
+                License Agreement and Privacy Statement.      </footer>
+    </div>
+
+    <footer id="copyright">  Copyright &copy; intuit  </footer>
+
+
+
+  <%= link_to 'The real form', 'https://accounts.intuit.com/signup.html?'%>

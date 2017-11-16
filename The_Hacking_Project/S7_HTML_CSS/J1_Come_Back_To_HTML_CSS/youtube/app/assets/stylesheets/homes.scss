@@ -3,7 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.header, {
+body {
+        // display: flex;
+        // flex-wrap:wrap;
+        // flex-direction: column;
+        overflow-x: hidden;
+        display: block;
+
+      }
+
+header {
+          height: 50px;
+          width: 100%;
+          background: blue;
           // display: flex;
           // flex-wrap:wrap;
           // flex-direction: row-reverse;
@@ -18,21 +30,83 @@
           // width: 1000px;
           //
           // font-size:10;
-      }
-.footer  { flex: 1 100%; }
+}
+footer  {
+          flex: 1 100%;
+          height: 50px;
+          width: 100%;
+          background: blue;
+          display: block;
+}
+
+
+.ligne {
+         display: block;
+         background: yellow;
+         width: 100%;
+         position: relative;
+         min-width: 1450px;
+
+ }
 
 .sidebar {
-           flex: 1;
-           background: maroon;
-           display: inline;
-           margin: 0 15%;
-           height: 100em;
+            background: maroon;
+            display: block;
+            float: right;
+            margin-right:10%;
+
+            position: relative;
+            clear: right;
+
+            width: 30%;
+
+
+
+          //  flex: 1;
+          //  margin: 0 15%;
+          //  height: 100em;
+          //  -webkit-flex: 9;
+          //  display: flex;
          }
+
+.sidebar ul {
+              // position: relative;
+              // float: left;
+
+}
+
+
+
+.sidebar ul li{
+                background: purple;
+                list-style-type: none;
+                display: block;
+                position: relative;
+                min-height: 64px;
+                // max-width: 426px;
+                margin-bottom: 30px;
+                padding-bottom:  10px;
+
+
+
+}
+
+
+.sidebar ul li a p img {
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        max-height: 168;
+                        max-width: 64;
+                        // border-style: double;
+
+}
 
 .main    {
           flex: 2;
           background: green;
           display: inline;
+          position: relative;
           // border: 6px solid #949599;
           // height: 100px;
           // margin: 20px;
@@ -40,15 +114,3 @@
           // width: 400px;
           // border-radius: 5px;
          }
-
-
-.ligne {background: yellow;
-}
-
-.body {
-        // display: flex;
-        // flex-wrap:wrap;
-        // flex-direction: column;
-
-
-      }

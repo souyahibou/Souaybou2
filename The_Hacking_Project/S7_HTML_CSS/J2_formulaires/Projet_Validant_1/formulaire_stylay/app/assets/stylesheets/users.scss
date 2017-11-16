@@ -1,0 +1,142 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+      background: #eceef1;
+      display: block;
+
+}
+
+
+
+#titre{
+        & h1 {
+               text-align: center;
+             }
+        // text-align: center;
+        // padding: 20px 0;
+
+        // display: block;
+        // margin: 0 auto;
+        // width: 100%;
+}
+
+
+div {
+      text-align: center;
+      width: 380px;
+      margin:auto;
+      border: 1px solid #c7c7c7;
+      background-color: white;
+      border-radius: 2px;
+
+
+      & #slogan {
+                  padding-bottom: 20px;
+                  text-align: center;
+                  display: block;
+
+
+
+
+                }
+
+
+      & fieldset{
+                  text-align: left;
+                  position: relative;
+                  border:none;
+
+
+
+                  & label {
+                           display: block;
+                           font-size: 14px;
+                           font-weight: 400;
+                           color: #404040;
+                           font-size: 14px;
+                           line-height: 25px;
+                           padding-bottom: 6px;
+                          }
+
+                  &  input {
+                            width: 320px;
+                            min-width: 160px;
+
+                            height: 34px;
+
+                            line-height: 1.5;
+
+                            font-size: 12px;
+                            font-weight: normal;
+                          }
+
+
+                  & span {
+                            padding: 5px 0;
+                            font-size: 10px;
+                            color: #444;;
+
+                            margin-top: 5px;
+                            margin-bottom: 5px;
+
+                            display: block;
+                            min-height: 20px;
+                          }
+
+                }
+
+
+
+
+      & #submit {
+                // background: #0077C5;
+                // border: #0077C5;
+                border-radius: 4px;
+
+                background: #0077C5;
+                box-shadow: 0 1px 1px 0 rgba(0,0,0,.75);
+                width: 100%;
+                height: 44px;
+                // border: 1px solid #ccc;
+                border: 1px solid #4c4c4c;
+
+                font-family: 'AvenirNext',Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif;
+                text-transform: capitalize;
+                font-size: 1.125em;
+                font-weight: 400;
+                color: #FFF;
+                text-align: center;
+                }
+
+      & #validation{
+                    margin: 5px 0 10px 0 ;
+                    }
+
+      }
+
+
+#copyright{
+            text-align: center;
+            margin: 5px;
+
+          }
+
+
+
+
+// titre
+// div
+
+// form
+
+// footer
+// validation
+// copyright
+
+
+// margin: 0 auto;
+// display: block;
+// width: 100%;

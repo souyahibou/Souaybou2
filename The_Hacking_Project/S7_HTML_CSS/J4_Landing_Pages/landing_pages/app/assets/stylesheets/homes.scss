@@ -31,9 +31,17 @@ header, footer, section, article{
   display: block;
 }
 
-
+header ul li{
+  list-style-type: none;
+  margin-left: 10px;
+  float: left;
+  
+}
+;
 header ul li a {
   display: inline;
+  float: left;
+
 }
 
 

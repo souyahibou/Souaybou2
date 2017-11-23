@@ -5,23 +5,30 @@
     for (i=0 ; i < array_of_ints.length;i++){
       if (array_of_ints[i] > array_of_ints[i+1]){
           max = array_of_ints[i]
+        }
     }
     return max
   }
 
-function vowel_count(wrd_of_str){
-  var nbr = 0 ;
-    return wrd_of_str."regex voyel".count
 
+  function vowel_count(wrd_of_str){
+    var nbr = 0 ;
+    m = wrd_of_str.match(/[aeiou]/gi)
+    if (m !== null){
+      nbr = m.length;
+    }
+    return nbr;
+  }
+
+
+
+function reverse(wrd_of_str){
+    new_wrd = []
+    for (i=0 ; i < wrd_of_str.length; i++){
+      new_wrd[i] = wrd_of_str[wrd_of_str.length-i];
+    }
+    print(new_wrd);
+    return new_wrd;
 }
 
-
 </script>
-
-
-
-
-
-
-
-    Construis une fonction reverse() qui prend un string et qui renvoie les caractères en position inverse. Ainsi, Bonjour monde ! devient ! ednom ruojnoB

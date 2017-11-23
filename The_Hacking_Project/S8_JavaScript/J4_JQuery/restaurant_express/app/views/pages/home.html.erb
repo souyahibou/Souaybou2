@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+
+	<div class="container-fluid">
+	<div class="container" >
+ 	 <!-- Content here -->
+   <div class="container" role="tablist" style="margin:auto;border: 1px solid black;">
+
+    		<h1 style="text-align:center;"> Resto trop bien ! </h1>
+        <h2 style="justify-content: center; display:flex;"><div style="width:20px; height:20px; float:left"><%= image_tag('Coffees_4422.svg') %></div> Miam on mange trop bien ici <div style="width:20px; height:20px; float:right"><%= image_tag('Coffees_4422.svg') %></div></h2>
+        <ul  class="nav nav-tabs" style="display: flex;  justify-content: center;margin:auto;">
+          <li id="list_1" style="margin:auto;"><a href="#">Présentation</a></li>
+          <li id="list_2" style="margin:auto;"><a href="#">Menu</a></li>
+          <li id="list_3" style="margin:auto;"><a href="#">Spécial</a></li>
+        </ul>
+        <div class="texte text_1" >
+          <h3>HOME</h3>
+          <p>Note : j'ai utilisé Semantic-UI, donc la fonction que j'ai utilisée avait des petites animations. Tu n'es pas obligé.e de les reproduire, il te faut juste réussir à faire le changement de tabs</p>
+        </div>
+        <div class="texte text_2">
+          <h3>MENU</h3>
+          <p id="2">Pour ce projet, il existe des libraries puissantes comme jQuery UI, ou même Bootstrap qui proposent une fonction .tabs() qui font tout le travail. Dans le futur nous allons évidemment les utiliser, mais pour cet exercice qui te fait comprendre l'intérêt de la manipulation des DOMs, il est interdit de s'en servir, et tu ne devras utiliser que les fonctions de base de jQuery.</p>
+        </div>
+        <div class="texte text_3">
+          <h3>SECIAL</h3>
+          <p id="3">Pour ce projet, nous te demandons bien évidemment de le faire dans un projet Rails, afin que tu apprennes à charger l'asset pipeline.</p>
+        </div>
+
+  </div>
+<script type="text/javascript">
+
+    $("li").hover(function(){
+          $(this).css("background-color", "yellow");
+        }, function(){$(this).css("background-color", "white");});
+
+    $("#list_1").hover(function(){
+        $(".text_2").hide();$(".text_3").hide();$(".text_1").show();}/*, function(){$(".text_2").show();$(".text_3").show();}*/);
+    $("#list_2").hover(function(){
+        $(".text_1").hide();$(".text_3").hide();$(".text_2").show();}/*, function(){$(".text_1").show();$(".text_3").show();}*/);
+    $("#list_3").hover(function(){
+        $(".text_2").hide();$(".text_1").hide();$(".text_3").show();}/*, function(){$(".text_2").show();$(".text_1").show();}*/);
+
+</script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>

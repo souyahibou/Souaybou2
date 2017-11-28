@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- fichiers CSS -->
+     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  </head>
+  <body onload="">
+	<!-- <div class="container-fluid"> -->
+	<div class="container" style="display:flex;flex-direction: column;">
+ 	<!-- Content here -->
+      <form action="#" style="display:inline;align-self:center;">
+       <fieldset style="display:flex;flex-direction:column;">
+           <legend>Google maps API:</legend>
+
+           <div class="form-group row" style="display:inline">
+               <label for="label1" style="">The Lattitude:</label>
+               <input type="text" name="lattitude" value="[A-Za-z]+ (regex presence)" id="label1" placeholder="Enter a word or a string" pattern="[0-9.-]+" title="Only letter no special chars no numbers">
+
+               <label for="reverse" style="">The Longitude:</label>
+               <input type="text" name="longitude" value="[A-Za-z0-9]+ (regex presence)" id="label2" placeholder="Enter a word or a string or a number" pattern="[0-9.-]+" title="Only letter no special chars" >
+
+               <input type="button" value="Submit Localization" onclick="localize();" id="button_localize"><br>
+           </div>
+
+           <div class="form-group row" style="display:inline;display:flex;">
+             <label for="labelzoom" style="margin:auto;">The Zoom:</label>
+             <input type="text" name="longitude" value="" id="labelzoom" placeholder="Enter a word or a string or a numbe [-0-9]+ (regex presence)r [-0-9]+ (regex presence)" pattern="[0-9.-]+" title="Only letter no special chars" style="flex:7";>
+             <input type="button" value="Submit Zoom" onclick="zoom();" id="button_zoom"><br>
+           </div>
+
+       </fieldset>
+     </form>
+     <div id="googleMap1" style="width:100%;height:500px;align-self:center;"></div>
+	</div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript -->
+    <script type="text/javascript">
+
+
+      var main = {salut(){alert("Bonjour");}        }
+
+
+
+      function myMap(latti,longi,order) {
+        var mapOptions1 = {
+          center: new google.maps.LatLng(latti,longi),
+          zoom:order,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+      }
+
+
+        function localize(order, longitude, lattitude){
+          if ((typeof(longitude) == 'undefined' ) && (typeof(lattitude) == 'undefined')) {
+                longitude = $(':input').filter($('#label1')).prop('value');
+                lattitude = $(':input').filter($('#label2')).prop('value');
+          }
+          if (typeof(order) == 'undefined'){order = 6;}
+          myMap(longitude, lattitude, order);
+        }
+
+
+        function zoom(){
+            ordre = $(':input').filter($("#labelzoom")).prop('value');
+            localize(Number(ordre));
+        }
+        $(document).ready(main.salut());
+    </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM5QMhmPxBB-SJaN9eMMKcqH23Cuitbig&callback=localize"></script>
+  </body>
+</html>

@@ -1,36 +1,97 @@
-<script type="text/javascript">
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  function my_max(array_of_ints){
-    var max = 0 ;
-    for (i=0 ; i < array_of_ints.length;i++){
-      if (array_of_ints[i] > array_of_ints[i+1]){
-          max = array_of_ints[i];
-        }
-        print(max);
-    }
+    <!-- fichiers CSS -->
+     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-    return max
-  }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  </head>
+  <body onload="">
+	<!-- <div class="container-fluid"> -->
+	<div class="container">
+ 	 <!-- Content here -->
+
+  <form action="#" > <!-- function get_action(form) { form.action = form_action;} -->    <!-- function get_action(obj){}    onsubmit="get_action(this);" -->
+   <fieldset style="display:flex;flex-direction:column;">
+     <legend>Liste functions javascripts:</legend>
+
+     <div class="form-group row has-success" style="display:block;">
+         Nombre Maximum: <input type="text" name="maxNumber" value="&infin;" id="max" pattern="[0-9]+" title="Only Number">
+         <input type="button" value="Submit Max Number" onclick="document.getElementById('max').value ='sde';"><br>
+     </div>
+
+     <div class="form-group row" style="display:block">
+         <label for="vowel" style="margin-top:auto">Décompte de voyelles:</label>
+         <input type="text" name="vowelCount" value="[A-Za-z]+ (regex presence)" id="vowel" placeholder="Enter a word or a string" pattern="[A-Za-z]+" title="Only letter no special chars no numbers">
+         <input type="button" value="Submit Vowel_count" onclick="$(':input').filter($('#vowel')).prop('value','rqegg');"><br>  <!-- attr('value','rqegg') -->
+     </div>
+
+     <div class="form-group row" style="display:block">
+         <label for="reverse">Inversement de caractères:</label>
+         <input type="text" name="reverse" value="[A-Za-z0-9]+ (regex presence)" id="reverse" placeholder="Enter a word or a string or a number" pattern="[A-Za-z0-9]+" title="Only letter no special chars">
+         <input type="button" value="Submit Reverse" onclick="$(':input').filter($('#reverse')).prop('value','rqejyyfgg')"><br>
+     </div>
+   </fieldset>
+ </form>
+  		...
+	</div>
 
 
-  function vowel_count(wrd_of_str){
-    var nbr = 0 ;
-    m = wrd_of_str.match(/[aeiou]/gi)
-    if (m !== null){
-      nbr = m.length;
-    }
-    return nbr;
-  }
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
+    <!-- Optional JavaScript -->
+    <script type="text/javascript">
 
+                  function my_max(array_of_ints){
+                    var max = 0 ;
+                    for (i=0 ; i < array_of_ints.length; i++)
+                      (array_of_ints[i] > max)?  max = array_of_ints[i] : {};
+                    return max;
+                  }
+                  // encore plus fort
+                  /*function my_max(array_of_ints){
+                    var max = 0 ;
+                    for (i=0 ; i < array_of_ints.length; i++)
+                        (array_of_ints[i] > max) && (max = array_of_ints[i]);
+                    return max;
+                  }*/
+          ////////////////////////////////////////////////////////////////////////
+                  function vowel_count(wrd_of_str){
+                    var nbr = 0 ;
+                    m = wrd_of_str.match(/[aeiou]/gi)
+                    if (m !== null){
+                      nbr = m.length;
+                    }
+                    return nbr;
+                  }
 
-function reverse(wrd_of_str){
-    new_wrd = []
-    for (i=0 ; i < wrd_of_str.length; i++){
-      new_wrd[i] = wrd_of_str[wrd_of_str.length-i];
-    }
-    print(new_wrd);
-    return new_wrd;
-}
+          ////////////////////////////////////////////////////////////////////
+                  function reverse(wrd_of_str){
+                      new_wrd = []
+                      for (i=1 ; i <= wrd_of_str.length; i++){
+                        new_wrd[i-1] = wrd_of_str[wrd_of_str.length-i];
+                      }
+                      alert(new_wrd);
+                      return new_wrd.join("");
+                  }
+                  // encore plus fort
+                  /*function reverse(string) {
+                    return string.split("").reverse().join("");
+                  }*/
+          ////////////////////////////////////////////////////////////////////////
+          //var main = function(){}
+          //$(document).ready(main);
+    </script>
 
-</script>
+  </body>
+</html>

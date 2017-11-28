@@ -18,7 +18,6 @@
 	<div class="container" >
  	 <!-- Content here -->
    <div class="container" role="tablist" style="margin:auto;border: 1px solid black;">
-
     		<h1 style="text-align:center;"> Resto trop bien ! </h1>
         <h2 style="justify-content: center; display:flex;"><div style="width:20px; height:20px; float:left"><%= image_tag('Coffees_4422.svg') %></div> Miam on mange trop bien ici <div style="width:20px; height:20px; float:right"><%= image_tag('Coffees_4422.svg') %></div></h2>
         <ul  class="nav nav-tabs" style="display: flex;  justify-content: center;margin:auto;">
@@ -27,33 +26,23 @@
           <li id="list_3" style="margin:auto;"><a href="#">Spécial</a></li>
         </ul>
         <div class="texte text_1" >
-          <h3>HOME</h3>
-          <p>Note : j'ai utilisé Semantic-UI, donc la fonction que j'ai utilisée avait des petites animations. Tu n'es pas obligé.e de les reproduire, il te faut juste réussir à faire le changement de tabs</p>
+          <h3>HOME</h3>     <p>Note : j'ai utilisé Semantic-UI, donc la fonction que j'ai utilisée avait des petites animations. Tu n'es pas obligé.e de les reproduire, il te faut juste réussir à faire le changement de tabs</p>
         </div>
         <div class="texte text_2">
-          <h3>MENU</h3>
-          <p id="2">Pour ce projet, il existe des libraries puissantes comme jQuery UI, ou même Bootstrap qui proposent une fonction .tabs() qui font tout le travail. Dans le futur nous allons évidemment les utiliser, mais pour cet exercice qui te fait comprendre l'intérêt de la manipulation des DOMs, il est interdit de s'en servir, et tu ne devras utiliser que les fonctions de base de jQuery.</p>
+          <h3>MENU</h3>     <p id="2">Pour ce projet, il existe des libraries puissantes comme jQuery UI, ou même Bootstrap qui proposent une fonction .tabs() qui font tout le travail. Dans le futur nous allons évidemment les utiliser, mais pour cet exercice qui te fait comprendre l'intérêt de la manipulation des DOMs, il est interdit de s'en servir, et tu ne devras utiliser que les fonctions de base de jQuery.</p>
         </div>
         <div class="texte text_3">
-          <h3>SECIAL</h3>
-          <p id="3">Pour ce projet, nous te demandons bien évidemment de le faire dans un projet Rails, afin que tu apprennes à charger l'asset pipeline.</p>
+          <h3>SECIAL</h3>     <p id="3">Pour ce projet, nous te demandons bien évidemment de le faire dans un projet Rails, afin que tu apprennes à charger l'asset pipeline.</p>
         </div>
-
   </div>
+
 <script type="text/javascript">
-
-    $("li").hover(function(){
-          $(this).css("background-color", "yellow");
-        }, function(){$(this).css("background-color", "white");});
-
-    $("#list_1").hover(function(){
-        $(".text_2").hide();$(".text_3").hide();$(".text_1").show();}/*, function(){$(".text_2").show();$(".text_3").show();}*/);
-    $("#list_2").hover(function(){
-        $(".text_1").hide();$(".text_3").hide();$(".text_2").show();}/*, function(){$(".text_1").show();$(".text_3").show();}*/);
-    $("#list_3").hover(function(){
-        $(".text_2").hide();$(".text_1").hide();$(".text_3").show();}/*, function(){$(".text_2").show();$(".text_1").show();}*/);
-
+    $("li").hover(function(){$(this).css("background-color", "yellow");}, function(){$(this).css("background-color", "white");});
+    $("#list_1").hover(function(){$(".text_2").hide();$(".text_3").hide();$(".text_1").show("slow");}/*, function(){$(".text_2").show();$(".text_3").show();}*/);
+    $("#list_2").hover(function(){$(".text_1").hide();$(".text_3").hide();$(".text_2").show("slow");}/*, function(){$(".text_1").show();$(".text_3").show();}*/);
+    $("#list_3").hover(function(){$(".text_2").hide();$(".text_1").hide();$(".text_3").show("slow");}/*, function(){$(".text_2").show();$(".text_1").show();}*/);
 </script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -61,3 +50,125 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<head>
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="logo.png" sizes="16x16">
+<title>Calculatrice</title>
+</head>
+<script src="script.js"></script>
+
+
+font-face {
+  font-family: 'lcd';
+  src: url('lcd.ttf') format('truetype');
+}
+
+html {
+	box-sizing: border-box;
+    font-family: 'lcd', 'Orbitron', sans-serif;
+
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	line-height: 1;
+
+
+}
+
+h1 {
+
+    text-align: center;
+    font-size: 60px;
+}
+
+.calculatrice{
+  width: 339px;
+  background: black;
+  margin: 30px auto 0;
+  border-radius: 5px;
+  padding: 30px;
+  font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+
+
+}
+
+#screen {
+  width: 92%;
+  height: 55px;
+  font-size: 40px;
+  border-radius: 5px;
+  text-align: right;
+  background-color: #657D62;
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  padding: 15px 4% 0;
+  overflow: hidden;
+  font-family: 'lcd', sans-serif;
+}
+
+button{
+  width: 70px;
+  display: inline-block;
+  font-size: 50px;
+  margin-right: 15px;
+  border: 0;
+  background: gray;
+  border-radius: 4px;
+  box-shadow: 0 4px 0 rgb(90, 90, 90);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  outline: 0;
+  padding: 12px 20px;
+  transition: all .1s linear;
+}
+
+button.last{
+  margin-right: 0;
+}
+
+button.btn-clear{
+  width: 100%;
+  margin-top: 15px;
+  box-shadow: 0 4px 0 #cc0000;
+  background: #ed4949;
+  font-size: 25px;
+}
+
+button.btn-clear:active {
+  box-shadow: 0 2px 0 rgb(90, 90, 90);
+  transform: translateY(2px);
+}
+
+.button-rows{
+  margin-top: 15px;
+}
+
+.row{
+  margin-bottom: 15px;
+}
+
+
+button:active {
+  box-shadow: 0 2px 0 rgb(90, 90, 90);
+  transform: translateY(2px);
+}
+
+button.eval{
+  box-shadow: 0 4px 0 rgb(230, 140, 0);
+  background: orange;
+}
+
+button.eval:active {
+  box-shadow: 0 2px 0 rgb(230, 140, 0);
+  transform: translateY(2px);
+}

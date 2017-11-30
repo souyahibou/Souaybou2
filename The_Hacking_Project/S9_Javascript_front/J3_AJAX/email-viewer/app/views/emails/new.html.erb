@@ -1,0 +1,13 @@
+<h1>Add new email</h1>
+
+<%= form_tag :action => 'create' do %>
+<p><label for = "email_object">Object</label>:
+<%= text_field 'emails', 'object' %></p>
+
+<p><label for = "email_body">Body</label>:
+<%= text_field 'emails', 'body' %></p>
+
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %

@@ -1,0 +1,33 @@
+h2
+{
+  color: RGB(100,200,150);
+}
+
+{
+  text-align: center;
+}
+
+{
+  background-image:radial-gradient();
+}
+
+@font-face
+{
+  font-weight: 400;
+  font-face: 200;
+  font-size: normal;
+  font-family:;
+}
+
+{
+  border-width: thin;
+  border: ;
+  border-color:;
+  border-color: inherit;
+  border-style: outset;
+  border-radius:;
+}
+
+{
+  text-shadow: 0,5;
+}

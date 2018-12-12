@@ -1,4 +1,6 @@
 class EmailsController < ApplicationController
+  before_action :set_email, only: [:show, :edit, :update, :destroy]
+
   def new
   end
 
@@ -28,7 +30,6 @@ class EmailsController < ApplicationController
   # DELETE /emails/1
   # DELETE /emails/1.json
   def destroy
-     @email = Email.find(params[:id])
      @email.destroy
 
      respond_to do |format|
@@ -45,8 +46,14 @@ class EmailsController < ApplicationController
 
   def show
   end
-end
 
-def email_params
-      params.require(:emails).permit(:object, :body)
-    end
+
+  private
+     def set_email
+        @email = Email.find(params[:id])
+     end
+
+     def email_params
+        params.require(:emails).permit(:object, :body)
+     end
+end
